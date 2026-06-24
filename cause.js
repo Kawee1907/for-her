@@ -30,8 +30,7 @@ const reasons = [
     },
     { 
         text: "And honestly... there are millions of other reasons why I love you. Ask me to tell you the rest when we are free..! 😉 Every second with you is a blessing.Ummmmmmmmmmh..❤️", 
-        emoji: "👀💞",
-        gif: "gif2.gif"
+        emoji: "👀💞"
     }
 ];
 
@@ -42,7 +41,7 @@ const shuffleButton = document.querySelector('.shuffle-button');
 const reasonCounter = document.querySelector('.reason-counter');
 let isTransitioning = false;
 
-// Create reason card with gif
+// Create reason card (GIF layout removed for a perfect mobile fit)
 function createReasonCard(reason) {
     const card = document.createElement('div');
     card.className = 'reason-card';
@@ -51,13 +50,7 @@ function createReasonCard(reason) {
     text.className = 'reason-text';
     text.innerHTML = `${reason.emoji} ${reason.text}`;
     
-    const gifOverlay = document.createElement('div');
-    gifOverlay.className = 'gif-overlay';
-    // Changed alt tag from "Friendship Memory" to "Our Memories" to match the mood!
-    gifOverlay.innerHTML = `<img src="${reason.gif}" alt="Our Memories">`;
-    
     card.appendChild(text);
-    card.appendChild(gifOverlay);
     
     gsap.from(card, {
         opacity: 0,
@@ -132,14 +125,13 @@ shuffleButton.addEventListener('click', () => {
 
 // Floating elements function
 function createFloatingElement() {
-    // Upgraded the symbols to represent your anniversary/love flow perfectly
     const elements = ['🌸', '✨', '💖', '🦋', '⭐', '🎈', '🌹', '❤️'];
     const element = document.createElement('div');
     element.className = 'floating';
     element.textContent = elements[Math.floor(Math.random() * elements.length)];
     element.style.left = Math.random() * window.innerWidth + 'px';
     element.style.top = Math.random() * window.innerHeight + 'px';
-    element.style.fontSize = (Math.random() * 20 + 15) + 'px'; // Made them slightly larger for a richer look
+    element.style.fontSize = (Math.random() * 20 + 15) + 'px'; 
     document.body.appendChild(element);
 
     gsap.to(element, {
@@ -163,4 +155,4 @@ if (cursor) {
 }
 
 // Continuous background floating magic
-setInterval(createFloatingElement, 1500); // Speeds it up slightly so the screen feels more alive and celebratory
+setInterval(createFloatingElement, 1500);
