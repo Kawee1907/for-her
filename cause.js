@@ -2,38 +2,31 @@
 const reasons = [
     { 
         text: "The way your eyes light up and you smile whenever you're truly happy. It's my absolute favorite view. 💖", 
-        emoji: "👑",
-        gif: "gif1.gif"
+        emoji: "👑"
     },
     { 
         text: "How incredibly deeply you care for me and look out for me every single day. I'm so obsessed with you. 🌸", 
-        emoji: "💗",
-        gif: "gif2.gif"
+        emoji: "💗"
     },
     { 
         text: "Our late-night conversations and all those inside chats that only the two of us understand. 🦋✨", 
-        emoji: "💕",
-        gif: "gif1.gif"
+        emoji: "💕"
     },
     { 
         text: "You are my biggest supporter, Mage Manika, always pushing me to be the best version of myself. 🥳", 
-        emoji: "🌟",
-        gif: "gif2.gif"
+        emoji: "🌟"
     },
     { 
         text: "Your pure heart and the endless warmth you give me. You make the world a much better place. 🦋", 
-        emoji: "❤️",
-        gif: "gif1.gif"
+        emoji: "❤️"
     },
     { 
         text: "How even on my hardest days, just hearing your voice makes everything completely fine. ⭐", 
-        emoji: "🧸",
-        gif: "gif2.gif"
+        emoji: "🧸"
     },
     { 
         text: "Because you are not just my wifey, you are my home, my peace, and my entire world. ♾️", 
-        emoji: "🌹",
-        gif: "gif1.gif"
+        emoji: "🌹"
     },
     { 
         text: "And honestly... there are millions of other reasons why I love you. Ask me to tell you the rest when we are free..! 😉 Every second with you is a blessing.Ummmmmmmmmmh..❤️", 
