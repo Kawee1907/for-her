@@ -85,3 +85,13 @@ h1 {
     .greeting { font-size: 1.2rem; }
     .cta-button { font-size: 1rem; }
 }
+
+/* 🚀 FIX: Hides the pink dot cursor on phones & restores natural mobile touch */
+@media (max-width: 1024px) {
+    .cursor {
+        display: none !important;
+    }
+    * {
+        cursor: auto !important;
+    }
+}
