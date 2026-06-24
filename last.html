@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Beautiful Memories ✨</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            /* Restored your perfect original pinkish-lavender gradient */
+            background: linear-gradient(135deg,
+                    #ffd1dc 0%,
+                    #e6e6fa 25%,
+                    #ffefd5 50%,
+                    #e6e6fa 75%,
+                    #ffd1dc 100%);
+            background-size: 400% 400%;
+            animation: gradientFlow 15s ease infinite;
+            font-family: 'Quicksand', sans-serif;
+            overflow-x: hidden;
+            color: #4a4a4a;
+        }
+
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Subtle Luxury Sparkle Overlay */
+        .magic-sparkles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .magic-sparkles::before,
+        .magic-sparkles::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.7) 1.5px, transparent 1.5px);
+            background-size: 60px 60px;
+            animation: riseSparkles 12s linear infinite;
+        }
+
+        .magic-sparkles::after {
+            animation-delay: -6s;
+            background-size: 45px 45px;
+            opacity: 0.4;
+        }
+
+        @keyframes riseSparkles {
+            0% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-30px) scale(1.1); }
+            100% { transform: translateY(-60px) scale(1); }
+        }
+
+        /* Floating Soft Elements */
+        .floating-hearts {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 1.8rem;
+            filter: drop-shadow(0 4px 8px rgba(255, 105, 180, 0.3));
+            animation: dreamFloat var(--float-duration, 7s) ease-in-out infinite;
+            animation-delay: var(--delay, 0s);
+            opacity: 0.8;
+        }
+
+        @keyframes dreamFloat {
+            0% { transform: translate(0, 105vh) scale(0.8) rotate(0deg); }
+            50% { transform: translate(var(--translate-x, 30px), 50vh) scale(1.1) rotate(180deg); }
+            100% { transform: translate(0, -10vh) scale(0.8) rotate(360deg); }
+        }
+
+        /* Sophisticated Typography Header */
+        .welcome {
+            text-align: center;
+            padding: 5rem 2rem 3rem;
+            position: relative;
+            z-index: 3;
+        }
+
+        .welcome h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4.5rem;
+            background: linear-gradient(45deg, #ff409f, #b533ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 3px 3px 20px rgba(255, 64, 159, 0.15);
+            animation: floatTitle 4s ease-in-out infinite;
+        }
+
+        @keyframes floatTitle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .welcome p {
+            font-size: 1.25rem;
+            font-weight: 500;
+            max-width: 650px;
+            margin: 1.5rem auto 0;
+            line-height: 1.7;
+            color: #555555;
+            background: rgba(255, 255, 255, 0.45);
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+            display: inline-block;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+        }
+
+        /* Unique Polaroid-Inspired Memory Deck Layout */
+        .memory-container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            z-index: 3;
+            position: relative;
+        }
+
+        .memory-card {
+            background: #ffffff;
+            border-radius: 4px; /* Crisp polaroid frames */
+            padding: 1.2rem 1.2rem 3rem 1.2rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08), 0 5px 15px rgba(0, 0, 0, 0.04);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        /* Natural scatter effect */
+        .memory-card:nth-child(1) { transform: rotate(-1.5deg); }
+        .memory-card:nth-child(2) { transform: rotate(1deg) translateY(-10px); }
+        .memory-card:nth-child(3) { transform: rotate(-0.5deg); }
+
+        .memory-card:hover {
+            transform: scale(1.04) rotate(0deg) translateY(-15px) !important;
+            box-shadow: 0 30px 50px rgba(255, 105, 180, 0.15);
+            z-index: 10;
+        }
+
+        .memory-img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border: 1px solid rgba(0,0,0,0.05);
+            margin-bottom: 1.5rem;
+            filter: saturate(1.05);
+            transition: filter 0.4s ease;
+        }
+
+        .memory-card:hover .memory-img {
+            filter: saturate(1.15);
+        }
+
+        .memory-date {
+            font-family: 'Dancing Script', cursive;
+            color: #ff409f;
+            font-size: 1.6rem;
+            margin-bottom: 0.6rem;
+            text-align: center;
+        }
+
+        .memory-caption {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #5d5d5d;
+            text-align: center;
+            font-weight: 500;
+            padding: 0 0.5rem;
+        }
+
+        /* Ultra-Modern Frosted Glass Celebration Block */
+        .final-message {
+            text-align: center;
+            padding: 5rem 2rem;
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(20px) saturate(120%);
+            -webkit-backdrop-filter: blur(20px) saturate(120%);
+            border-top: 1px solid rgba(255, 255, 255, 0.6);
+            margin-top: 5rem;
+            position: relative;
+            z-index: 3;
+            box-shadow: 0 -10px 40px rgba(0,0,0,0.02);
+        }
+
+        .final-message h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.6rem;
+            color: #ff3399;
+            margin-bottom: 2rem;
+            text-shadow: 2px 4px 10px rgba(255, 51, 153, 0.1);
+            display: inline-block;
+        }
+
+        .final-message p {
+            font-size: 1.25rem;
+            font-weight: 500;
+            max-width: 780px;
+            margin: 0 auto 1.8rem;
+            line-height: 1.9;
+            color: #444444;
+        }
+
+        /* Glistening, Reactive Interactive Button */
+        .goodbye-btn {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            background: linear-gradient(45deg, #ff409f, #b533ff, #ff409f);
+            background-size: 200% auto;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 25px rgba(218, 112, 214, 0.4);
+            animation: pulseGlow 2.5s infinite;
+        }
+
+        .goodbye-btn:hover {
+            transform: scale(1.08);
+            background-position: right center;
+            box-shadow: 0 15px 35px rgba(255, 64, 159, 0.6);
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 10px 25px rgba(255, 64, 159, 0.4); }
+            50% { box-shadow: 0 10px 35px rgba(181, 51, 255, 0.6); }
+            100% { box-shadow: 0 10px 25px rgba(255, 64, 159, 0.4); }
+        }
+
+        /* Elegant Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(#ff409f, #b533ff);
+            border-radius: 10px;
+        }
+
+        /* Clean Responsive Scaled Formats */
+        @media (max-width: 768px) {
+            .welcome h1 { font-size: 3.2rem; }
+            .memory-container { grid-template-columns: 1fr; padding: 1.5rem; gap: 2.5rem; }
+            .memory-card { transform: none !important; }
+            .final-message h2 { font-size: 2.6rem; }
+            .final-message p { font-size: 1.1rem; }
+            .goodbye-btn { padding: 1rem 2rem; font-size: 1.1rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="magic-sparkles"></div>
+    <div class="floating-hearts">
+        <div class="heart" style="--float-duration: 9s; --delay: 0s; --translate-x: 40px;">💝</div>
+        <div class="heart" style="--float-duration: 11s; --delay: 1.5s; --translate-x: -50px;">💖</div>
+        <div class="heart" style="--float-duration: 8s; --delay: 3s; --translate-x: 60px;">💗</div>
+        <div class="heart" style="--float-duration: 12s; --delay: 0.5s; --translate-x: -30px;">💓</div>
+        <div class="heart" style="--float-duration: 10s; --delay: 4.5s; --translate-x: 45px;">💕</div>
+    </div>
+
+    <section class="welcome">
+        <h1>Our Beautiful Moments Together</h1>
+        <p>Every single day spent next to you feels like a dream come true. Let's cherish our most precious memories... ✨</p>
+    </section>
+
+    <div class="memory-container">
+        <div class="memory-card">
+            <img src="./d1.jpeg" alt="Your Beautiful Smile" class="memory-img">
+            <div class="memory-date">Your Precious Smile</div>
+            <div class="memory-caption">The absolute best sight in the whole world. Seeing you genuinely happy fills my entire heart with joy. ❤️</div>
+        </div>
+        <div class="memory-card">
+            <img src="./d2.jpeg" alt="Our Bond" class="memory-img">
+            <div class="memory-date">Our Bond</div>
+            <div class="memory-caption">No matter where we go or what we do, as long as I am with you, I am right where I belong. 😊💕</div>
+        </div>
+        <div class="memory-card">
+            <img src="./d3.jpeg" alt="My Whole World" class="memory-img">
+            <div class="memory-date">My Beautiful Soul</div>
+            <div class="memory-caption">Keep being the pure, beautiful, amazing girl that you are. You make every dark day completely bright. 🌸💖</div>
+        </div>
+    </div>
+
+    <section class="final-message">
+        <h2>Happy 22nd Birthday, Mage Manika! 🎂✨</h2>
+        <p>Every single laugh we share, every talk we have, and every tiny moment together means everything to me. 💫<br><br>
+            I am incredibly grateful for the beautiful bond we share and the unmatchable happiness you constantly bring into my life.<br><br>
+            On this milestone day, my biggest wish is for your endless peace, success, and absolute happiness. 🌸</p>
+        <p>You deserve all the magic and joy this universe can offer-never stop shining your beautiful light. ♾️❤️</p>
+        <a href="https://wa.me/94767443213" class="goodbye-btn" target="_blank">Send a Kiss to Your Kukku Baba 💋</a>
+    </section>
+</body>
+
+</html>
